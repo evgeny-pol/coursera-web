@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-top: 5px;
+}
+
+section {
+    background-color: #f0f0f0;
+    padding: 5px 20px 10px;
+    border-radius: 30px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+#brandHeader {
+    margin: 0px;
+    font-size: 23px;
+}
