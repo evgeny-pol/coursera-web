@@ -1,10 +1,13 @@
-(function (window) {
-    var helloSpeaker = {};
+(function () {
+    console.log("in SpeakHello.js");
+    console.log("this = " + this);
+    console.log("window = " + window);
+
     var speakWord = "Hello";
 
-    helloSpeaker.speak = function (name) {
-        console.log(speakWord + " " + name);
-    }
-
-    window.helloSpeaker = helloSpeaker;
-})(window);
+    this.helloSpeaker = {
+        speak: function (name) {
+            console.log(speakWord + " " + name);
+        }
+    };
+})();
