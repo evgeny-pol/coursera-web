@@ -1,0 +1,26 @@
+.message {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.note {
+    margin-top: 5px;
+    font-style: italic;
+    color: gray;
+}
+
+p.dataPresent {
+    color: green;
+}
+
+p.noData {
+    color: red;
+}
+
+input.dataPresent {
+    border-color: green;
+}
+
+input.noData {
+    border-color: red;
+}
