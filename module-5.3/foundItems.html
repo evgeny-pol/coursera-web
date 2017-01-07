@@ -1,0 +1,10 @@
+<div>
+    <div class="menuItem" ng-repeat="item in foundCtl.foundItems">
+        <p>
+            <button class="btn btn-default" ng-click="foundCtl.onRemove({index:$index});">Don't want this one!</button>
+            <b>({{ item.short_name }}) {{ item.name }}</b>
+        </p>
+        <p><i>{{ item.description }}</i></p>
+    </div>
+    <div class="foundListMessage" ng-transclude></div>
+</div>
