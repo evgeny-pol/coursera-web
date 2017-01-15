@@ -8,14 +8,14 @@
             self.getAllCategories = function () {
                 return $http({
                     method: "GET",
-                    url: 'http://davids-restaurant.herokuapp.com/categories.json'
+                    url: 'https://davids-restaurant.herokuapp.com/categories.json'
                 });
             }
 
             self.getItemsForCategory = function (categoryShortName) {
                 return $http({
                     method: "GET",
-                    url: 'http://davids-restaurant.herokuapp.com/menu_items.json',
+                    url: 'https://davids-restaurant.herokuapp.com/menu_items.json',
                     params: {
                         category: categoryShortName
                     }
