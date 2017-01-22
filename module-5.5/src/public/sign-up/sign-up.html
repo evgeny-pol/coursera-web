@@ -1,0 +1,47 @@
+<div class="container">
+    <fieldset>
+        <legend>Sign Up for the newsletter</legend>
+        <form name='regForm' novalidate>
+            <input type="text" name="firstname" placeholder="First name" ng-model="signUpStateController.user.firstname" required minlength="4" ng-maxlength="10">
+            <span ng-if="(regForm.firstname.$error.minlength || regForm.firstname.$error.required) && regForm.firstname.$touched">
+                First name must be at least 4 characters long
+            </span>
+            <span ng-if="regForm.firstname.$error.maxlength && regForm.firstname.$touched">
+                First name must not be longer than 10 characters
+            </span>
+            <br>
+
+            <input type="text" name="lastname" placeholder="Last name" ng-model="signUpStateController.user.lastname" required minlength="4" ng-maxlength="10">
+            <span ng-if="(regForm.lastname.$error.minlength || regForm.lastname.$error.required) && regForm.lastname.$touched">
+                Last name must be at least 4 characters long
+            </span>
+            <span ng-if="regForm.lastname.$error.maxlength && regForm.lastname.$touched">
+                Last name must not be longer than 10 characters
+            </span>
+            <br>
+
+            <input type="email" name="email" placeholder="Email" ng-model="signUpStateController.user.email" required>
+            <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+                Must be a valid email address: handle@domain format
+            </span>
+            <br>
+
+            <input type="text" name="phone" placeholder="Phone ###-###-####" ng-model="signUpStateController.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})">
+            <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+                Phone must be in the format ###-###-####
+            </span>
+            <br>
+
+            <input type="text" name="favdish" placeholder="Favorite dish number" ng-model="signUpStateController.user.favdish" required />
+            {{ signUpStateController.favdisherror }}
+            <br />
+
+            <button class="btn submit-button" ng-disabled="regForm.$invalid" ng-click="signUpStateController.submit()">
+                Submit
+            </button>
+        </form>
+    </fieldset>
+    <div id="info" ng-if="signUpStateController.info">
+        {{ signUpStateController.info }}
+    </div>
+</div>

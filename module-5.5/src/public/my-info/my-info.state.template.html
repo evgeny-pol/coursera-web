@@ -1,0 +1,16 @@
+<div class="container">
+    <div ng-if="!myInfoStateController.user">
+        <a ui-sref="public.sign-up">Not Signed Up Yet. Sign up Now!</a>
+    </div>
+    <div ng-if="myInfoStateController.user&&myInfoStateController.favdish">
+        <h1>My info:</h1>
+        <p>First name: {{myInfoStateController.user.firstname}}</p>
+        <p>Last name: {{myInfoStateController.user.lastname}}</p>
+        <p>E-mail: {{myInfoStateController.user.email}}</p>
+        <p ng-if="myInfoStateController.user.phone">Phone: {{myInfoStateController.user.phone}}</p>
+        <p>Favotite dish:</p>
+        <p><b>{{myInfoStateController.favdish.data.name}}</b></p>
+        <p><i>{{myInfoStateController.favdish.data.description}}</i></p>
+        <img class="img-responsive" width="250" height="150" ng-src="{{myInfoStateController.basePath}}/images/{{myInfoStateController.user.favdish}}.jpg" alt="favorite dish">
+    </div>
+</div>
