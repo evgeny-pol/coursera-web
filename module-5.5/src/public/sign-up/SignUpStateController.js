@@ -7,7 +7,13 @@
             self.submit = function () {
                 var request = MenuService.getMenuItem(self.user.favdish)
                     .then(function (response) {
-                        SignUpService.user = self.user;
+                        SignUpService.user = {
+                            firstname: self.user.firstname,
+                            lastname: self.user.lastname,
+                            email: self.user.email,
+                            phone: self.user.phone,
+                            favdish: self.user.favdish
+                        };
                         self.favdisherror = '';
                         self.info = 'Your information has been saved.';
                     })
